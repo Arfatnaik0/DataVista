@@ -1,6 +1,6 @@
 body{
     font-family:'Ancizar sans';
-    background-color: rgb(27, 27, 27)
+    background-color: rgb(27, 27, 27);
 }
 
 #body{
@@ -59,14 +59,14 @@ body{
 
 .name{
     font-family: 'Bitcount Grid Double';
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 30px;
     letter-spacing: 2px;
 }
 
 .hero {
     height: 80vh;
-    background-color: rgb(133, 146, 151);
+    /* background-color: rgb(133, 146, 151); */
     width: 90%;
     display: flex;
     justify-content: center;
@@ -84,9 +84,34 @@ body{
 }
 
 .container2 {
-    height: 70%;
+    height: 100%;
     width: 40%;
-    background-color: rgb(37, 39, 37);
     margin: 2%;
 }
 
+.spline{
+    width:100%;
+    height:100%;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 1;
+    /* border: #3a45e3 solid 2px; */
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+}
+
+#spline{
+    height: 150%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#spline::-webkit-scrollbar{
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+#spline {
+    scrollbar-width: none;
+     -ms-overflow-style: none; /* IE and Edge */
+}
