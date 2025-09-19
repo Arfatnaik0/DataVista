@@ -51,15 +51,17 @@ body{
     border-radius: 20px;
     margin-top: 1%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
-
-.nav_links{
+.content{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 30%;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.navlinks{
+    
 }
 
