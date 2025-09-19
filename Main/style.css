@@ -1,3 +1,24 @@
 body{
     font-family:'Ancizar sans';
 }
+
+.hero{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: gray;
+}
+
+.container1 {
+    width: 60%;
+    margin: auto;
+    padding: 50px 0;
+    text-align: center;
+}
