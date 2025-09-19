@@ -80,7 +80,7 @@
             </div>
         <div class="main">
             <div class="one">
-                <h1>📊 Data Visualization Playground</h1>
+                <h1>Data Visualization Playground</h1>
                 <spline-viewer id="spline2" url="https://prod.spline.design/kAdCegBphJRe3mBG/scene.splinecode"></spline-viewer>
             </div>
             <div class="two">
@@ -96,9 +96,56 @@
                 <option value="bar">Graph Chart</option>
                 <option value="line">Line Chart</option>
                 <option value="pie">Pie Chart</option>
+                <option value="scatter">Scatter Plot</option>
+                <option value="doughnut">Doughnut Chart</option>
                 </select>
+                <button id="showFilters" class="filter-btn">Advanced Filters</button>
+                <button id="showInsights" class="insights-btn">Get Insights</button>
                 <button id="downloadChart" class="download-btn">Download Chart</button>
-            </div>  
+            </div>
+            
+            <!-- Advanced Filtering Panel -->
+            <div id="filterPanel" class="panel hidden">
+                <div class="panel-header">
+                    <h3> Advanced Filters</h3>
+                    <button class="close-panel" data-panel="filterPanel">×</button>
+                </div>
+                <div class="panel-content">
+                    <div id="filterControls"></div>
+                    <div class="filter-actions">
+                        <button id="applyFilters" class="apply-btn">Apply Filters</button>
+                        <button id="clearFilters" class="clear-btn">Clear All</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI Insights Panel -->
+            <div id="insightsPanel" class="panel hidden">
+                <div class="panel-header">
+                    <h3>AI-Powered Insights</h3>
+                    <button class="close-panel" data-panel="insightsPanel">×</button>
+                </div>
+                <div class="panel-content">
+                    <div id="insightsContent">
+                        <div class="insight-section">
+                            <h4>Trend Analysis</h4>
+                            <div id="trendInsights" class="insights-display"></div>
+                        </div>
+                        <div class="insight-section">
+                            <h4>Pattern Recognition</h4>
+                            <div id="patternInsights" class="insights-display"></div>
+                        </div>
+                        <div class="insight-section">
+                            <h4>Anomaly Detection</h4>
+                            <div id="anomalyInsights" class="insights-display"></div>
+                        </div>
+                        <div class="insight-section">
+                            <h4>Statistical Summary</h4>
+                            <div id="statsInsights" class="insights-display"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
         <div class="about_us">
@@ -113,9 +160,6 @@
                         Whether you're a student, analyst, or business leader, DataVista gives you the tools to tell your data story with clarity and impact. We believe in the power of visual storytelling to drive smarter decisions and inspire innovation.
                     </p>
                 </div>
-                <!-- <div class="about_img">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/analytics-1973761_1280.png" alt="Teamwork Data Visualization">
-                </div> -->
             </div>
         </div>
         <div class="footer">
