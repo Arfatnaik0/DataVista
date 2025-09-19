@@ -356,3 +356,43 @@ body{
      -ms-overflow-style: none; /* IE and Edge */
 }
 
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 230px;
+    height: auto;
+    min-height: 260px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -10px -10px 320px rgb(60, 60, 60);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 33px;
+    color: #fff;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+.card:hover h3 {
+    color: #3a45e3cc;
+   
+}
+.card p {
+    font-size: 18px;
+    color: #bbb;
+    line-height: 1.4;
+}
+.card:hover p {
+    color: #fff; 
+}
+
