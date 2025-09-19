@@ -77,6 +77,7 @@ home=document.getElementById("home");
 home.addEventListener("click",()=>{
     document.querySelector(".hero").style.display = "flex";
     document.querySelector(".main").style.display = "none";
+    document.querySelector(".wrapper").style.display = "block";
 });
 
 trynow=document.getElementById("tryNow");
@@ -84,6 +85,7 @@ trynow=document.getElementById("tryNow");
 trynow.addEventListener("click",()=>{
     document.querySelector(".hero").style.display = "none";
     document.querySelector(".main").style.display = "flex";
+    document.querySelector(".wrapper").style.display = "none";
 });
 
 demo=document.querySelector('.btn-outline');
@@ -91,4 +93,5 @@ demo=document.querySelector('.btn-outline');
 demo.addEventListener("click",()=>{
     document.querySelector(".hero").style.display = "none";
     document.querySelector(".main").style.display = "flex";
+    document.querySelector(".wrapper").style.display = "none";
 });
