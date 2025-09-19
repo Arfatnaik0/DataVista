@@ -85,6 +85,57 @@ body{
     padding-left:10%;
 }
 
+.btn-container {
+            margin-top: -3%;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            padding: 15px;
+            height: 100px;
+        }
+
+        button {
+            position: relative;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            outline: none;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-family: 'Bitcount Grid Double', monospace;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: #3a45e3;
+            border: 2px solid #3a45e3;
+            transition: all 0.5s;
+            z-index: 1;
+        }
+
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: #3a45e3;
+            transition: all 0.5s;
+            z-index: -1;
+        }
+
+        .btn-outline:hover {
+            color: #000;
+        }
+
+        .btn-outline:hover::before {
+            width: 100%;
+        }
+
 .C1 {
     color: white;
     font-size: 65px;

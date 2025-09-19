@@ -85,3 +85,10 @@ trynow.addEventListener("click",()=>{
     document.querySelector(".hero").style.display = "none";
     document.querySelector(".main").style.display = "flex";
 });
+
+demo=document.querySelector('.btn-outline');
+
+demo.addEventListener("click",()=>{
+    document.querySelector(".hero").style.display = "none";
+    document.querySelector(".main").style.display = "flex";
+});
