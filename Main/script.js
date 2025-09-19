@@ -1,7 +1,6 @@
 let chart;
 const ctx = document.getElementById('myChart').getContext('2d');
 
-// Initial chart with demo data
 function renderChart(type, labels, datasets) {
   if (chart) chart.destroy();
   chart = new Chart(ctx, {
@@ -11,7 +10,6 @@ function renderChart(type, labels, datasets) {
   });
 }
 
-// Demo data fallback
 renderChart("bar",
   ["2019", "2020", "2021", "2022"],
   [
@@ -70,6 +68,24 @@ document.getElementById("chartType").addEventListener("change", () => {
 function randomColor() {
   return `hsl(${Math.floor(Math.random()*360)}, 70%, 60%)`;
 }
+
+// Download chart functionality
+document.getElementById("downloadChart").addEventListener("click", () => {
+  if (!chart) {
+    alert("No chart available to download. Please upload data first.");
+    return;
+  }
+  
+  // Create a link element to trigger download
+  const link = document.createElement('a');
+  link.download = `chart-${new Date().toISOString().slice(0, 10)}.png`;
+  link.href = chart.toBase64Image('image/png', 1);
+  
+  // Trigger download
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
 
 
 home=document.getElementById("home");
