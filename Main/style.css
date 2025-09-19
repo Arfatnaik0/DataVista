@@ -1,20 +1,20 @@
-body{
-    font-family:'Ancizar sans';
+body {
+    font-family: 'Ancizar sans';
     background-color: rgb(27, 27, 27);
 }
 
-#body{
-    height:100%;
+#body {
+    height: 100%;
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
 }
 
-.navbar{
-    height:10vh;
+.navbar {
+    height: 10vh;
     background-color: rgba(101, 101, 101, 0.33);
     width: 90%;
     border-radius: 20px;
@@ -30,34 +30,35 @@ body{
     z-index: 1000;
 }
 
-.content{
+.content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 80%;
 }
 
-.nav_links{
+.nav_links {
     display: flex;
     justify-content: space-between;
     width: 25%;
 }
 
-.nav_links a{
+.nav_links a {
     text-decoration: none;
     color: white;
     font-size: 20px;
     font-family: 'Bitcount Grid Double';
     letter-spacing: 2px;
     transition: all 0.3s;
-    &:hover{
+
+    &:hover {
         transition: all 0.3s;
         scale: 1.1;
     }
 }
 
 
-.name{
+.name {
     font-family: 'Bitcount Grid Double';
     color: rgb(255, 255, 255);
     font-size: 30px;
@@ -81,7 +82,7 @@ body{
     width: 60%;
     background-color: rgb(39, 39, 44);
     margin: 2%;
-    
+
 }
 
 .container2 {
@@ -90,9 +91,9 @@ body{
     margin: 2%;
 }
 
-.spline{
-    width:100%;
-    height:100%;
+.spline {
+    width: 100%;
+    height: 100%;
     border-radius: 25px;
     overflow: hidden;
     z-index: 1;
@@ -101,18 +102,61 @@ body{
     scrollbar-width: none;
 }
 
-#spline{
+#spline {
     height: 150%;
     width: 100%;
     overflow: hidden;
 }
 
-#spline::-webkit-scrollbar{
+#spline::-webkit-scrollbar {
     display: none;
 }
 
 /* Hide scrollbar for Firefox */
 #spline {
     scrollbar-width: none;
-     -ms-overflow-style: none; /* IE and Edge */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+
+/* Card section */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 230px;
+    height: auto;
+    min-height: 260px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -10px -10px 320px rgb(60, 60, 60);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 33px;
+    color: #fff;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+.card:hover h3 {
+    color: #3a45e3cc;
+   
+}
+.card p {
+    font-size: 18px;
+    color: #bbb;
+    line-height: 1.4;
+}
+.card:hover p {
+    color: #fff; 
 }
