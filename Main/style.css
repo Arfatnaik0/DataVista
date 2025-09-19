@@ -1224,3 +1224,10 @@ body{
     color: #667eea;
     font-weight: bold;
 }
+
+
+.gitlink {
+    text-decoration: none;
+    letter-spacing: 4px;
+    color: white;
+}
