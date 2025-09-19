@@ -356,3 +356,105 @@ body{
      -ms-overflow-style: none; /* IE and Edge */
 }
 
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.card {
+    width: 230px;
+    height: auto;
+    min-height: 260px;
+    border-radius: 30px;
+    background: #212121;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.4s ease, color 0.3s ease;
+    margin-right: 30px;
+}
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 33px;
+    color: #fff;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+.card:hover h3 {
+    color: #3a45e3cc;
+   
+}
+.card p {
+    font-size: 18px;
+    color: #bbb;
+    line-height: 1.4;
+}
+.card:hover p {
+    color: #fff; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  height: 260px;
+  position: relative;
+  margin-top: 5rem;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -280px;
+  }
+}
+
+.item {
+  border-radius: 6px;
+  position: absolute;
+  left: max(calc(280px * 5), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.item1 {
+  animation-delay: calc(30s / 5 * (5 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 5 * (5 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 5 * (5 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 5 * (5 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 5 * (5 - 5) * -1);
+}
