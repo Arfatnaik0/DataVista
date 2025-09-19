@@ -1,3 +1,117 @@
 body{
     font-family:'Ancizar sans';
+    background-color: rgb(27, 27, 27);
+}
+
+#body{
+    height:100%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.navbar{
+    height:10vh;
+    background-color: rgba(101, 101, 101, 0.33);
+    width: 90%;
+    border-radius: 20px;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.nav_links{
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+}
+
+.nav_links a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Bitcount Grid Double';
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    &:hover{
+        transition: all 0.3s;
+        scale: 1.1;
+    }
+}
+
+
+.name{
+    font-family: 'Bitcount Grid Double';
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.hero {
+    height: 80vh;
+    /* background-color: rgb(133, 146, 151); */
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5%;
+    margin-top: calc(10vh + 3%);
+    border-radius: 20px;
+}
+
+.container1 {
+    height: 70%;
+    width: 60%;
+    background-color: rgb(39, 39, 44);
+    margin: 2%;
+}
+
+.container2 {
+    height: 100%;
+    width: 40%;
+    margin: 2%;
+}
+
+.spline{
+    width:100%;
+    height:100%;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 1;
+    /* border: #3a45e3 solid 2px; */
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+}
+
+#spline{
+    height: 150%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#spline::-webkit-scrollbar{
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+#spline {
+    scrollbar-width: none;
+     -ms-overflow-style: none; /* IE and Edge */
 }
