@@ -145,3 +145,161 @@ p  {
     scrollbar-width: none;
      -ms-overflow-style: none; /* IE and Edge */
 }
+
+.main{
+    height: 80vh;
+    width: 90%;
+    margin: 1.5%;
+    margin-top: calc(10vh + 3%);
+    border-radius: 20px;
+    /* background-color: rgba(57, 57, 57, 0.384); */
+    text-align: center;
+    color: white;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Custom File Input Styling */
+#fileInput {
+    display: none; /* Hide the default input */
+}
+
+.file-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.file-input-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, rgba(101, 101, 101, 0.4), rgba(58, 69, 227, 0.3));
+    color: white;
+    font-family: 'Bitcount Grid Double', monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.file-input-label:hover {
+    background: linear-gradient(135deg, rgba(58, 69, 227, 0.5), rgba(101, 101, 101, 0.3));
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(58, 69, 227, 0.3);
+}
+
+.file-input-label::before {
+    content: "📁";
+    font-size: 18px;
+}
+
+/* Dropdown Styling */
+#chartType {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(101, 101, 101, 0.4), rgba(58, 69, 227, 0.3));
+    color: white;
+    font-family: 'Bitcount Grid Double', monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 45px;
+}
+
+/* #chartType:hover {
+    background: linear-gradient(135deg, rgba(58, 69, 227, 0.5), rgba(101, 101, 101, 0.3));
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(58, 69, 227, 0.3);
+} */
+
+#chartType:focus {
+    outline: none;
+    border-color: rgba(58, 69, 227, 0.8);
+    box-shadow: 0 0 0 3px rgba(58, 69, 227, 0.2);
+}
+
+/* Dropdown options styling */
+#chartType option {
+    background-color: rgba(39, 39, 44, 0.95);
+    color: white;
+    padding: 10px;
+    font-family: 'Bitcount Grid Double', monospace;
+}
+
+.chart-container {
+  width: 65%;
+  height: 60%;
+  max-width: 700px;
+  margin: auto;
+  background: #bebebe;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-top: 7%;
+}
+
+.one{
+    width: 30%;
+    height: 80%;
+}
+
+.two{
+    width: 65%;
+    height: 90%;
+}
+
+.one{
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 1;
+    /* border: #3a45e3 solid 2px; */
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+}
+
+#spline2{
+    height: 120%;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -27%;
+    margin-left: 5%;
+}
+
+#spline2::-webkit-scrollbar{
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+#spline2 {
+    scrollbar-width: none;
+     -ms-overflow-style: none; /* IE and Edge */
+}
+
