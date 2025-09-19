@@ -299,6 +299,36 @@ body{
     box-shadow: 0 0 0 3px rgba(58, 69, 227, 0.2);
 }
 
+/* Download Button Styling */
+.download-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, rgba(58, 69, 227, 0.6), rgba(134, 71, 255, 0.6));
+    color: white;
+    font-family: 'Bitcount Grid Double', monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    font-weight: 600;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, rgba(58, 69, 227, 0.8), rgba(134, 71, 255, 0.8));
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(58, 69, 227, 0.4);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(58, 69, 227, 0.3);
+}
+
 /* Dropdown options styling */
 #chartType option {
     background-color: rgba(39, 39, 44, 0.95);
@@ -756,6 +786,12 @@ body{
     
     #chartType {
         padding: 10px 16px;
+        font-size: 14px;
+        min-width: 120px;
+    }
+    
+    .download-btn {
+        padding: 10px 20px;
         font-size: 14px;
         min-width: 120px;
     }
