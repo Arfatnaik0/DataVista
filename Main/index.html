@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Bitcount+Grid+Double:wght@100..900&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js" defer></script>
     <title>DataVista</title>
 </head>
@@ -21,8 +22,8 @@
                 <h2>DataVista</h2>
             </div>
             <div class="nav_links">
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
+                <a id="home" href="#">Home</a>
+                <a id="tryNow" href="#">Try Now</a>
             </div>
         </div>
         </div>
@@ -31,12 +32,35 @@
             <div class="container2">
                 <div class="spline">
                 <spline-viewer id="spline" url="https://prod.spline.design/nnhxJGsreTIwuknR/scene.splinecode"></spline-viewer>
+                </div>
             </div>
+        </div>
+        <div class="main">
+            <div class="one">
+                <h1>📊 Data Visualization Playground</h1>
+                <spline-viewer id="spline2" url="https://prod.spline.design/kAdCegBphJRe3mBG/scene.splinecode"></spline-viewer>
+            </div>
+            <div class="two">
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="controls">
+                <div class="file-input-wrapper">
+                    <input type="file" id="fileInput" accept=".csv,.json">
+                    <label for="fileInput" class="file-input-label">Choose File</label>
+                </div>
+                <select id="chartType">
+                <option value="bar">Graph Chart</option>
+                <option value="line">Line Chart</option>
+                <option value="pie">Pie Chart</option>
+                </select>
+            </div>  
             </div>
         </div>
         <div class="about_us"></div>
         <div class="footer"></div>
     </div>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.61/build/spline-viewer.js"></script>
 </body>
 </html>
