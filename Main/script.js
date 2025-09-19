@@ -78,6 +78,7 @@ home.addEventListener("click",()=>{
     document.querySelector(".hero").style.display = "flex";
     document.querySelector(".main").style.display = "none";
     document.querySelector(".wrapper").style.display = "block";
+    document.querySelector(".about_us").style.display = "block";
 });
 
 trynow=document.getElementById("tryNow");
@@ -86,6 +87,7 @@ trynow.addEventListener("click",()=>{
     document.querySelector(".hero").style.display = "none";
     document.querySelector(".main").style.display = "flex";
     document.querySelector(".wrapper").style.display = "none";
+    document.querySelector(".about_us").style.display = "none";
 });
 
 demo=document.querySelector('.btn-outline');
@@ -94,4 +96,6 @@ demo.addEventListener("click",()=>{
     document.querySelector(".hero").style.display = "none";
     document.querySelector(".main").style.display = "flex";
     document.querySelector(".wrapper").style.display = "none";
+    document.querySelector(".about_us").style.display = "none";
 });
+
