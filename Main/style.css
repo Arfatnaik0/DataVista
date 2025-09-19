@@ -53,15 +53,40 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(10px);
 }
 
 .content{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
 }
 
-.navlinks{
-    
+.nav_links{
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+}
+
+.nav_links a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Bitcount Grid Double';
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    &:hover{
+        transition: all 0.3s;
+        scale: 1.1;
+    }
+}
+
+
+.name{
+    font-family: 'Bitcount Grid Double';
+    color: white;
+    font-size: 30px;
+    letter-spacing: 2px;
 }
 
