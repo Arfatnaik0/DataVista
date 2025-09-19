@@ -79,9 +79,38 @@ body{
 .container1 {
     height: 70%;
     width: 60%;
-    background-color: rgb(39, 39, 44);
+    /* background-color: rgb(39, 39, 44); */
     margin: 2%;
-    
+    text-align: left;
+    padding-left:10%;
+}
+
+h1{
+    color: white;
+    font-size: 65px;
+    margin: 2%;
+    line-height: 1;   
+
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, rgba(58,69,227,1) 0%, rgba(134,71,255,1) 100%);
+  background-clip: text; 
+  color: transparent; 
+}
+
+p  {
+    color: white;
+    font-size: 20px;
+    margin: 2%;
+}
+
+.Trybtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 4%;
 }
 
 .container2 {
