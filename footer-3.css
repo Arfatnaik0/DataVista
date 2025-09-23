@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Anxizar sans';
+}
+
+body{
+  background-color: black;
+}
+
+
+footer {
+  width: 100%;
+  position: relative; /* let footer flow naturally */
+  bottom: 0;
+  background-color: white;
+}
+
+
+.flex-shit{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-shit{
+  margin-top: 40px;
+}
+
+.footer-shit{
+  position: relative;
+}
+
+.relative-footer-shit{
+  position: absolute;
+  bottom: 0;
+  margin-left: -20px;
+  z-index: 1;
+}
+
+.logo-title{
+  width: 700px;
+  height: 450px;
+}
+
+.logo-bubble{
+  position: relative;
+  width: 350px;
+  height: 350px;
+  z-index: 2;
+}
+
+.block-shit{
+  display: flex;
+  justify-content: flex-end;
+  gap: 80px;
+  margin-right: 40px;
+  z-index: 1;
+}
+
+.privacy-shit{
+    color: gray;
+    font-size: 12px;
+    width: 150px;
+    margin-top: 10px;
+
+}
+.writing{
+  color: gray;
+  font-size: 12px;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.github-logo{
+  height: 25px;
+  width: 25px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+li{
+  margin-bottom: 7px;
+}
+
+ul li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.underline{
+  color: gray;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.contacts{
+  margin-top: -3px;
+  margin-right: 60px;
+}
+
+/* 📱 Mobile Responsive Footer */
+@media (max-width: 768px) {
+
+  .flex-shit {
+    flex-direction: column;
+    align-items: flex-start; /* align everything left */
+    gap: 20px;
+    padding: 20px, 0px, 20px 0px;
+  }
+
+  .logo-shit {
+    align-self: flex-start;
+    padding: 0 !important;
+  }
+
+  .logo-title{
+    margin-bottom: 40px;
+    width: 550px;
+    height: 350px;
+  }
+
+  .footer-shit {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .relative-footer-shit {
+    margin-left: -10px !important; /* remove the -20px shift */
+  }
+
+  .block-shit {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+    padding: 40px;
+  }
+
+  .contacts {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .privacy-shit,
+  .writing {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .underline {
+    font-size: 14px;
+  }
+
+  .github-logo {
+    height: 30px;
+    width: 30px;
+  }
+
+  .relative-footer-shit {
+    margin-left: 0 !important;
+  }
+  .footer-shit{
+    margin-left: 0;
+  }
+}
+
+/* 📱 Extra small screens (phones under 480px) */
+@media (max-width: 480px) {
+  .underline {
+    font-size: 13px;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .logo-shit {
+    align-self: flex-start;
+  }
+
+  .logo-title{
+    margin-bottom: 70px;
+    width: 450px;
+    height: 320px;
+  }
+
+
+  .relative-footer-shit {
+    margin-left: 0 !important;
+  }
+}
