@@ -1,7 +1,14 @@
-# Team Name : CTRL Freaks
-# DataVista - Advanced Data Analytics Platform
+# DataVista 📊 - Advanced Data Analytics Platform
 
 DataVista is a powerful, interactive data visualization and analytics platform that transforms raw data into meaningful insights. With advanced filtering, grouping, data transformation tools, and AI-powered pattern recognition, DataVista empowers users to explore their data like never before.
+
+
+## 📋 Table of Contents
+- [Features](#-features)
+- [Data Support](#-data-support)
+- [Use Cases](#-use-cases)
+- [Technical Details](#-technical-features)
+- [Project Structure](#-project-structure)
 
 ## 🚀 Features
 
@@ -73,20 +80,30 @@ DataVista is a powerful, interactive data visualization and analytics platform t
 - Quality control metrics
 - Performance benchmarking
 
-## 🚀 Getting Started
 
-1. **Open DataVista**: Navigate to the application in your browser
-2. **Upload Data**: Click "Choose File" and select your CSV or JSON file
-3. **Explore Visualizations**: Use the chart type selector to try different visualizations
-4. **Apply Filters**: Click "Advanced Filters" to filter your data
-5. **Get Insights**: Click "AI Insights" to discover patterns and trends
+### Prerequisites
+- A modern web browser (Chrome, Firefox, Safari, or Edge)
+- No additional software required!
 
-## 📁 Sample Data
+### Sample CSV Format
+```csv
+Category,2019,2020,2021,2022
+Sales,120,150,180,220
+Revenue,340,280,350,400
+```
 
-The repository includes sample data files to help you get started:
-
-- `sample-data.csv`: Business metrics with multiple dimensions
-- `sample-data.json`: Quarterly business performance data
+### Sample JSON Format
+```json
+{
+  "labels": ["Q1", "Q2", "Q3", "Q4"],
+  "datasets": [
+    {
+      "label": "Revenue",
+      "data": [45, 59, 80, 81]
+    }
+  ]
+}
+```
 
 ## 🛠 Technical Features
 
@@ -119,10 +136,6 @@ The repository includes sample data files to help you get started:
 - **Moving Averages**: For smoothing and trend identification
 - **Correlation Matrices**: For relationship analysis
 
-## 💡 Advanced Tips
-
-### Formula Creation
-Advanced data manipulation capabilities have been streamlined to focus on filtering and AI insights.
 
 ### Filter Combinations
 - Use multiple filters simultaneously for complex data exploration
@@ -135,23 +148,32 @@ Advanced data manipulation capabilities have been streamlined to focus on filter
 - **Pie Charts**: Perfect for showing proportions
 - **Scatter Plots**: Great for correlation analysis
 
-## 🔮 Future Enhancements
+## 📂 Project Structure
 
-- Real-time data streaming support
-- Advanced machine learning models
-- Collaborative features and sharing
-- Custom dashboard creation
-- API integration capabilities
-- Advanced statistical tests
-- Predictive analytics features
+```
+DataVista/
+├── Main/
+│   ├── index.html          # Main application HTML
+│   ├── script.js           # Core JavaScript logic and DataAnalyzer class
+│   └── style.css           # Styling and responsive design
+├── sample-data.csv         # Sample CSV data for testing
+├── sample-data.json        # Sample JSON data for testing
+└── README.md              # Project documentation
+```
 
-## 📞 Support
+### Key Components
 
-For questions, suggestions, or issues:
-- Review the sample data files for formatting examples
-- Check the AI Insights panel for data quality recommendations
-- Use the filter system to explore data subsets
-- Try different chart types for various perspectives on your data
+- **`DataAnalyzer` Class**: Core analytics engine handling data processing, visualization, and insights
+- **Chart Rendering**: Powered by Chart.js for interactive visualizations
+- **Filter System**: Dynamic filter generation based on data types
+- **Insights Engine**: AI-powered pattern recognition and anomaly detection
+
+## Acknowledgments
+
+- [Chart.js](https://www.chartjs.org/) - Beautiful, responsive charts
+- [Spline](https://spline.design/) - 3D interactive experiences
+- [Google Fonts](https://fonts.google.com/) - Beautiful typography
+
 
 
 
