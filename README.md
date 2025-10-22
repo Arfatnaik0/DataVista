@@ -1,4 +1,4 @@
-# DataVista 📊 - Advanced Data Analytics Platform
+# DataVista 📊
 
 DataVista is a powerful, interactive data visualization and analytics platform that transforms raw data into meaningful insights. With advanced filtering, grouping, data transformation tools, and AI-powered pattern recognition, DataVista empowers users to explore their data like never before.
 
