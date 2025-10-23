@@ -98,8 +98,8 @@ class DataAnalyzer {
     this.renderChart("bar",
       ["2019", "2020", "2021", "2022"],
       [
-        { label: "Sales", data: [120, 150, 180, 200], backgroundColor: '#3a45e3' },
-        { label: "Profit", data: [30, 45, 60, 70], backgroundColor: '#8647ff' }
+        { label: "Sales", data: [120, 150, 180, 200] },
+        { label: "Profit", data: [30, 45, 60, 70] }
       ]
     );
   }
@@ -134,6 +134,8 @@ class DataAnalyzer {
 
       if (file.name.endsWith(".json")) {
         data = JSON.parse(text);
+        // Transform JSON data to include rawData structure for filtering
+        data = this.transformJSONData(data);
         this.originalData = data;
       } else if (file.name.endsWith(".csv")) {
         data = this.parseCSV(text);
@@ -148,6 +150,29 @@ class DataAnalyzer {
     } catch (error) {
       alert("Error processing file: " + error.message);
     }
+  }
+
+  transformJSONData(jsonData) {
+    // Transform JSON data to include rawData structure for filtering
+    const { labels, datasets } = jsonData;
+    const rawData = {};
+    const headers = ['Label'];
+    
+    // Add labels as a column
+    rawData['Label'] = labels;
+    
+    // Add each dataset as a column
+    datasets.forEach(dataset => {
+      headers.push(dataset.label);
+      rawData[dataset.label] = dataset.data;
+    });
+    
+    return {
+      labels,
+      datasets: datasets.map(ds => ({ ...ds })),
+      rawData,
+      headers
+    };
   }
 
   parseCSV(text) {
@@ -171,8 +196,7 @@ class DataAnalyzer {
     for (let col = 1; col < headers.length; col++) {
       datasets.push({
         label: headers[col],
-        data: dataRows.map(r => parseFloat(r[col]) || 0),
-        backgroundColor: this.randomColor()
+        data: dataRows.map(r => parseFloat(r[col]) || 0)
       });
     }
 
