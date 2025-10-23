@@ -61,13 +61,33 @@ class DataAnalyzer {
   renderChart(type, labels, datasets) {
     if (this.chart) this.chart.destroy();
     
+    const isPieOrDoughnut = type === 'pie' || type === 'doughnut';
+    const isScatter = type === 'scatter';
+    
+    // Transform data for scatter plot
+    let chartData = { labels, datasets };
+    if (isScatter) {
+      chartData = {
+        datasets: datasets.map(dataset => ({
+          ...dataset,
+          data: dataset.data.map((value, index) => ({
+            x: index,
+            y: value
+          }))
+        }))
+      };
+    }
+    
     this.chart = new Chart(this.ctx, {
       type,
-      data: { labels, datasets },
+      data: chartData,
       options: {
         responsive: true,
         plugins: {
-          legend: { position: 'top' },
+          legend: { 
+            position: 'top',
+            display: !isPieOrDoughnut
+          },
           tooltip: {
             callbacks: {
               afterBody: (tooltipItems) => {
@@ -77,20 +97,37 @@ class DataAnalyzer {
                 return [];
               }
             }
+          },
+          datalabels: {
+            anchor: 'end',
+            align: 'top',
+            formatter: (value) => {
+              if (isScatter && value && typeof value === 'object') {
+                return value.y;
+              }
+              return value;
+            },
+            color: 'white',
+            font: {
+              weight: 'bold',
+              size: 12
+            }
           }
         },
-        scales: type !== 'pie' && type !== 'doughnut' ? {
+        scales: !isPieOrDoughnut ? {
           y: {
             beginAtZero: true,
             grid: { color: 'rgba(255, 255, 255, 0.1)' },
             ticks: { color: 'white' }
           },
           x: {
+            beginAtZero: isScatter,
             grid: { color: 'rgba(255, 255, 255, 0.1)' },
             ticks: { color: 'white' }
           }
         } : {}
-      }
+      },
+      plugins: [ChartDataLabels]
     });
   }
 
@@ -605,10 +642,22 @@ class DataAnalyzer {
     if (!this.chart) return;
     
     const newType = document.getElementById("chartType").value;
+    
+    // For scatter plots, we need to re-render the chart with proper data format
+    if (newType === 'scatter' || this.chart.config.type === 'scatter') {
+      this.renderChartFromData();
+      return;
+    }
+    
+    const isPieOrDoughnut = newType === 'pie' || newType === 'doughnut';
+    
     this.chart.config.type = newType;
     
+    // Update legend visibility
+    this.chart.options.plugins.legend.display = !isPieOrDoughnut;
+    
     // Update scales for different chart types
-    if (newType === 'pie' || newType === 'doughnut') {
+    if (isPieOrDoughnut) {
       this.chart.options.scales = {};
     } else {
       this.chart.options.scales = {
