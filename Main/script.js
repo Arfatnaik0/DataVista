@@ -1,4 +1,3 @@
-// DataVista Advanced Analytics System
 class DataAnalyzer {
   constructor() {
     this.chart = null;
@@ -16,29 +15,19 @@ class DataAnalyzer {
   }
 
   setupEventListeners() {
-    // File upload
     document.getElementById("fileInput").addEventListener("change", (e) => this.handleFileUpload(e));
-    
-    // Chart type change
     document.getElementById("chartType").addEventListener("change", () => this.updateChartType());
-    
-    // Download functionality
     document.getElementById("downloadChart").addEventListener("click", () => this.downloadChart());
-    
-    // Panel controls
     document.getElementById("showFilters").addEventListener("click", () => this.showPanel('filterPanel'));
     document.getElementById("showInsights").addEventListener("click", () => this.showPanel('insightsPanel'));
     
-    // Close panel buttons
     document.querySelectorAll('.close-panel').forEach(btn => {
       btn.addEventListener('click', (e) => this.hidePanel(e.target.dataset.panel));
     });
     
-    // Filter controls
     document.getElementById("applyFilters").addEventListener("click", () => this.applyFilters());
     document.getElementById("clearFilters").addEventListener("click", () => this.clearFilters());
     
-    // Navigation
     document.getElementById("home").addEventListener("click", () => this.showHome());
     document.getElementById("tryNow").addEventListener("click", () => this.showApp());
     document.querySelector('.btn-outline').addEventListener("click", () => this.showApp());
@@ -64,7 +53,6 @@ class DataAnalyzer {
     const isPieOrDoughnut = type === 'pie' || type === 'doughnut';
     const isScatter = type === 'scatter';
     
-    // Transform data for scatter plot
     let chartData = { labels, datasets };
     if (isScatter) {
       chartData = {
@@ -153,7 +141,6 @@ class DataAnalyzer {
   }
 
   randomColor() {
-    // Generate colors that match the website theme (blue-purple palette)
     const themeColors = [
       '#3a45e3', '#8647ff', '#667eea', '#764ba2', '#5b6bed', 
       '#7c5aff', '#4a54e8', '#9555ff', '#6366f1', '#8b5cf6'
@@ -171,7 +158,6 @@ class DataAnalyzer {
 
       if (file.name.endsWith(".json")) {
         data = JSON.parse(text);
-        // Transform JSON data to include rawData structure for filtering
         data = this.transformJSONData(data);
         this.originalData = data;
       } else if (file.name.endsWith(".csv")) {
@@ -190,15 +176,12 @@ class DataAnalyzer {
   }
 
   transformJSONData(jsonData) {
-    // Transform JSON data to include rawData structure for filtering
     const { labels, datasets } = jsonData;
     const rawData = {};
     const headers = ['Label'];
     
-    // Add labels as a column
     rawData['Label'] = labels;
     
-    // Add each dataset as a column
     datasets.forEach(dataset => {
       headers.push(dataset.label);
       rawData[dataset.label] = dataset.data;
@@ -221,7 +204,6 @@ class DataAnalyzer {
     const datasets = [];
     const rawData = {};
 
-    // Store raw data for advanced processing
     headers.forEach((header, index) => {
       rawData[header] = dataRows.map(row => {
         const value = row[index];
@@ -229,7 +211,6 @@ class DataAnalyzer {
       });
     });
 
-    // Create datasets for chart
     for (let col = 1; col < headers.length; col++) {
       datasets.push({
         label: headers[col],
@@ -307,7 +288,6 @@ class DataAnalyzer {
       container.appendChild(filterGroup);
     });
 
-    // Add event listeners for select all/deselect all buttons
     container.querySelectorAll('.select-all-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const column = e.target.dataset.column;
@@ -402,7 +382,6 @@ class DataAnalyzer {
       const data = dataset.data;
       const stats = this.calculateStatistics(data);
       
-      // Trend analysis
       const trend = this.detectTrend(data);
       insights.trends.push({
         label: dataset.label,
@@ -410,13 +389,11 @@ class DataAnalyzer {
         description: `${dataset.label} shows a ${trend.direction} trend`
       });
 
-      // Statistical summary
       insights.statistics.push({
         label: dataset.label,
         ...stats
       });
 
-      // Anomaly detection
       const anomalies = this.detectAnomalies(data, stats);
       if (anomalies.length > 0) {
         insights.anomalies.push({
@@ -427,7 +404,6 @@ class DataAnalyzer {
         });
       }
 
-      // Pattern recognition
       const patterns = this.detectPatterns(data);
       if (patterns.length > 0) {
         insights.patterns.push({
@@ -474,7 +450,6 @@ class DataAnalyzer {
     const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
     const intercept = (sumY - slope * sumX) / n;
     
-    // Calculate R-squared
     const yMean = sumY / n;
     const ssRes = y.reduce((acc, yi, i) => acc + Math.pow(yi - (slope * x[i] + intercept), 2), 0);
     const ssTot = y.reduce((acc, yi) => acc + Math.pow(yi - yMean, 2), 0);
@@ -493,7 +468,7 @@ class DataAnalyzer {
   }
 
   detectAnomalies(data, stats) {
-    const threshold = 2; // Standard deviations
+    const threshold = 2;
     const mean = parseFloat(stats.mean);
     const std = parseFloat(stats.std);
     
@@ -503,17 +478,14 @@ class DataAnalyzer {
   detectPatterns(data) {
     const patterns = [];
     
-    // Check for cyclical patterns
     if (this.isCyclical(data)) {
       patterns.push('Cyclical pattern detected');
     }
     
-    // Check for exponential growth
     if (this.isExponential(data)) {
       patterns.push('Exponential growth pattern');
     }
     
-    // Check for seasonal patterns
     if (this.isSeasonal(data)) {
       patterns.push('Seasonal variation detected');
     }
@@ -524,7 +496,6 @@ class DataAnalyzer {
   isCyclical(data) {
     if (data.length < 6) return false;
     
-    // Simple autocorrelation check
     const periods = [2, 3, 4, 6];
     return periods.some(period => {
       if (data.length < period * 2) return false;
@@ -545,7 +516,6 @@ class DataAnalyzer {
   isExponential(data) {
     if (data.length < 4) return false;
     
-    // Check if log of data shows linear trend
     const logData = data.filter(d => d > 0).map(d => Math.log(d));
     if (logData.length < 4) return false;
     
@@ -556,7 +526,6 @@ class DataAnalyzer {
   isSeasonal(data) {
     if (data.length < 8) return false;
     
-    // Check for repeating patterns every 4 or 12 points (quarterly/monthly)
     const seasonalPeriods = [4, 12];
     
     return seasonalPeriods.some(period => {
@@ -583,7 +552,6 @@ class DataAnalyzer {
   }
 
   displayInsights(insights) {
-    // Trend insights
     const trendContainer = document.getElementById('trendInsights');
     trendContainer.innerHTML = insights.trends.map(trend => `
       <div class="insight-item">
@@ -594,7 +562,6 @@ class DataAnalyzer {
       </div>
     `).join('');
 
-    // Pattern insights
     const patternContainer = document.getElementById('patternInsights');
     patternContainer.innerHTML = insights.patterns.length > 0 
       ? insights.patterns.map(pattern => `
@@ -604,7 +571,6 @@ class DataAnalyzer {
         `).join('')
       : '<div class="insight-item">No significant patterns detected</div>';
 
-    // Anomaly insights
     const anomalyContainer = document.getElementById('anomalyInsights');
     anomalyContainer.innerHTML = insights.anomalies.length > 0
       ? insights.anomalies.map(anomaly => `
@@ -615,7 +581,6 @@ class DataAnalyzer {
         `).join('')
       : '<div class="insight-item">No significant anomalies detected</div>';
 
-    // Statistical insights
     const statsContainer = document.getElementById('statsInsights');
     statsContainer.innerHTML = insights.statistics.map(stat => `
       <div class="insight-item">
@@ -643,7 +608,6 @@ class DataAnalyzer {
     
     const newType = document.getElementById("chartType").value;
     
-    // For scatter plots, we need to re-render the chart with proper data format
     if (newType === 'scatter' || this.chart.config.type === 'scatter') {
       this.renderChartFromData();
       return;
@@ -653,10 +617,8 @@ class DataAnalyzer {
     
     this.chart.config.type = newType;
     
-    // Update legend visibility
     this.chart.options.plugins.legend.display = !isPieOrDoughnut;
     
-    // Update scales for different chart types
     if (isPieOrDoughnut) {
       this.chart.options.scales = {};
     } else {
@@ -692,10 +654,8 @@ class DataAnalyzer {
   }
 
   showPanel(panelId) {
-    // Hide all panels first
     document.querySelectorAll('.panel').forEach(panel => panel.classList.add('hidden'));
     
-    // Show requested panel
     const panel = document.getElementById(panelId);
     if (panel) {
       panel.classList.remove('hidden');
@@ -710,6 +670,5 @@ class DataAnalyzer {
   }
 }
 
-// Initialize the DataVista application
 const dataAnalyzer = new DataAnalyzer();
 
